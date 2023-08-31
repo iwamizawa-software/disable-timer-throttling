@@ -11,8 +11,8 @@
     return id;
   };
   window.clearTimeout = window.clearInterval = function (id) {
-    delete timers[id];
-    w.postMessage([id]);
+    delete timers[+id];
+    w.postMessage([+id]);
   };
   w.onmessage = function (event) {
     var args = timers[event.data];
